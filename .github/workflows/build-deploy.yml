@@ -5,10 +5,10 @@ on: ["push", "pull_request"]
 jobs:
   job1:
     env:
-      DATABASE_URL=postgresql://postgres:password@postgres:5432/TodoApplicationDatabase
-      SECRET_KEY=b18397e46629897e0dc1ea364f28408c16038cfdc5bd9e4606616e9bf8316e9bf8316b41
-      ALGORITHM=HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES=30
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/TodoApplicationDatabase
+      SECRET_KEY: b18397e46629897e0dc1ea364f28408c16038cfdc5bd9e4606616e9bf8316e9bf8316b41
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: '30'
     runs-on: ubuntu-latest
     steps:
       - name: Pulling git repo
