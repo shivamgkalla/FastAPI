@@ -42,7 +42,7 @@ jobs:
         run: echo "DATABASE_URL=postgresql://postgres:password@localhost:5432/TodoApplicationDatabase_test" >> $GITHUB_ENV
 
       - name: Print DATABASE_URL
-        run:  echo "✅ DATABASE_URL is set to: $DATABASE_URL"
+        run: echo "✅ DATABASE_URL is set to: $DATABASE_URL"
 
 
 
