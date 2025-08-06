@@ -32,14 +32,20 @@ app.add_middleware(
 def test(request: Request):
     return RedirectResponse(url="/todos/todo-page", status_code=status.HTTP_302_FOUND)
 
-@app.get("/healthy")
+@app.get("/health")
 def health_check():
     return {'status': 'Healthy'}
+
+
+# Docker test #
+
+@app.get("/docker-test")
+def docker_test():
+    return {'status': 'Docker test successfully passed.'}
+    
 
 
 app.include_router(auth.router)
 app.include_router(admin.router)
 app.include_router(users.router)
 app.include_router(todos.router)
-
-

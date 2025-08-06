@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/usr/src/app
+    command: uvicorn TodoApp.main:app --host 0.0.0.0 --port 4000 --reload
+    env_file:
+      - ./.env
+  
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=TodoApplicationDatabase
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db:

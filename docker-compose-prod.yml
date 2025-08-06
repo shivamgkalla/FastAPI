@@ -1,0 +1,21 @@
+services:
+  app:
+    image: shivamgkalla/fastapi-todoapp
+    depends_on:
+      - postgres
+    ports:
+      - "80:4000"
+    # command: uvicorn TodoApp.main:app --host 0.0.0.0 --port 4000
+    env_file:
+      - ./.env
+  
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db:
