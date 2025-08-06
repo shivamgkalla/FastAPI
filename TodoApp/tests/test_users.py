@@ -16,7 +16,7 @@ def test_return_user(test_user):
     assert response.json()['email'] == "shivamkallatest@gmail.com"
     assert response.json()['first_name'] == "Shivam"
     assert response.json()['last_name'] == "Kalla"
-    assert response.json()['phone_no'] == "0123456789"
+    assert response.json()['phone_number'] == "0123456789"
 
 
 def test_change_password_success(test_user):
@@ -31,6 +31,6 @@ def test_change_password_invalid_current_password(test_user):
 
 
 def test_change_phone_no_success(test_user):
-    response = client.put('/user/phone_no/1234567890')
+    response = client.put('/user/phone_number/1234567890')
     assert response.status_code == status.HTTP_204_NO_CONTENT
 
