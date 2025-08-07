@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-          POSTGRES_DB: TodoApplicationDatabase_test
+          POSTGRES_DB: TodoApplicationDatabase
         ports:
           - 5432:5432
         options: >-
