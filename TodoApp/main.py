@@ -49,7 +49,13 @@ def docker_test():
 @app.get("/ci-cd")
 def ci_cd_test():
     return {"status": "CI/CD is Live"}
-    
+
+
+# CI/CD + Docker Image Integration Test via Github Workflow
+
+@app.get("/cicd_docker")
+def cicd_and_docker_integration():
+    return {"status": "Successful end-to-end integration"}
 
 
 app.include_router(auth.router)
