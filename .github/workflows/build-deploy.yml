@@ -46,8 +46,10 @@ jobs:
           echo "ACCESS_TOKEN_EXPIRE_MINUTES=${{ secrets.ACCESS_TOKEN_EXPIRE_MINUTES }}" >> $GITHUB_ENV
 
 
-      - name: Set DATABASE_URL for test
-        run: echo "DATABASE_URL=postgresql://postgres:password@localhost:5432/TodoApplicationDatabase" >> $GITHUB_ENV
+      - name: Export secrets to environment
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
+
 
       - name: Verify DATABASE_URL
         run: |
