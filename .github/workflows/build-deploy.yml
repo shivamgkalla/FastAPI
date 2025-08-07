@@ -38,8 +38,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # - name: Set DATABASE_URL
-      #   run: echo "DATABASE_URL=postgresql://postgres:password@localhost:5432/TodoApplicationDatabase_test" >> $GITHUB_ENV
+      - name: Export env variables for shell
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> $GITHUB_ENV
+          echo "ALGORITHM=${{ secrets.ALGORITHM }}" >> $GITHUB_ENV
+          echo "ACCESS_TOKEN_EXPIRE_MINUTES=${{ secrets.ACCESS_TOKEN_EXPIRE_MINUTES }}" >> $GITHUB_ENV
+
 
       - name: Verify DATABASE_URL
         run: |
