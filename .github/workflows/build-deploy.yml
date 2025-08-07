@@ -78,7 +78,7 @@ jobs:
 
       - name: Deploying to Render
         id: render_deploy
-        uses: MrAmericanMike/trigger-render-deploy@m0.0.1
+        uses: MrAmericanMike/trigger-render-deploy@0.0.1
         with:
             render-service-id: ${{ secrets.RENDER_SERVICE_ID }}
             render-api-key: ${{ secrets.RENDER_API_KEY }}
