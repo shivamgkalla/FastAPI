@@ -39,12 +39,12 @@ jobs:
         run: pip install -r requirements.txt
 
 
-      - name: Run env scripts using secrets
-        run: |
-          echo "Using DATABASE_URL: $DATABASE_URL"
-          echo "Using SECRET_KEY: $SECRET_KEY"
-          echo "Using ALGORITHM: $ALGORITHM"
-          echo "Using ACCESS_TOKEN_EXPIRE_MINUTES: $ACCESS_TOKEN_EXPIRE_MINUTES"
+      # - name: Run env scripts using secrets
+      #   run: |
+      #     echo "Using DATABASE_URL: $DATABASE_URL"
+      #     echo "Using SECRET_KEY: $SECRET_KEY"
+      #     echo "Using ALGORITHM: $ALGORITHM"
+      #     echo "Using ACCESS_TOKEN_EXPIRE_MINUTES: $ACCESS_TOKEN_EXPIRE_MINUTES"
           
 
         env:
