@@ -42,6 +42,13 @@ def health_check():
 @app.get("/docker-test")
 def docker_test():
     return {'status': 'Docker test successfully passed.'}
+
+
+# CI/CD Test #
+
+@app.get("/ci-cd")
+def ci_cd_test():
+    return {"status": "CI/CD is Live"}
     
 
 
