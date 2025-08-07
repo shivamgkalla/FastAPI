@@ -4,11 +4,11 @@ on: ["push", "pull_request"]
 
 jobs:
   job1:
-    # env:
-    #   DATABASE_URL: ${{secrets.DATABASE_URL}}
-    #   SECRET_KEY: ${{secrets.SECRET_KEY}}
-    #   ALGORITHM: ${{secrets.ALGORITHM}}
-    #   ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
+    env:
+      DATABASE_URL: ${{secrets.DATABASE_URL}}
+      SECRET_KEY: ${{secrets.SECRET_KEY}}
+      ALGORITHM: ${{secrets.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
     services:
       postgres:
@@ -47,22 +47,22 @@ jobs:
       #     echo "Using ACCESS_TOKEN_EXPIRE_MINUTES: $ACCESS_TOKEN_EXPIRE_MINUTES"
           
 
-        env:
-          DATABASE_URL: ${{secrets.DATABASE_URL}}
-          SECRET_KEY: ${{secrets.SECRET_KEY}}
-          ALGORITHM: ${{secrets.ALGORITHM}}
-          ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
+        # env:
+        #   DATABASE_URL: ${{secrets.DATABASE_URL}}
+        #   SECRET_KEY: ${{secrets.SECRET_KEY}}
+        #   ALGORITHM: ${{secrets.ALGORITHM}}
+        #   ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
 
-      - name: Verify DATABASE_URL
-        run: |
-          echo "DATABASE_URL is: $DATABASE_URL"
-          if [ -z "$DATABASE_URL" ]; then
-            echo "::error::❌ DATABASE_URL is NOT set"
-            exit 1
-          else
-            echo "✅ DATABASE_URL is set"
-          fi
+      # - name: Verify DATABASE_URL
+      #   run: |
+      #     echo "DATABASE_URL is: $DATABASE_URL"
+      #     if [ -z "$DATABASE_URL" ]; then
+      #       echo "::error::❌ DATABASE_URL is NOT set"
+      #       exit 1
+      #     else
+      #       echo "✅ DATABASE_URL is set"
+      #     fi
 
 
 
