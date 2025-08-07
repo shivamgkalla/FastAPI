@@ -39,33 +39,6 @@ jobs:
         run: pip install -r requirements.txt
 
 
-      # - name: Run env scripts using secrets
-      #   run: |
-      #     echo "Using DATABASE_URL: $DATABASE_URL"
-      #     echo "Using SECRET_KEY: $SECRET_KEY"
-      #     echo "Using ALGORITHM: $ALGORITHM"
-      #     echo "Using ACCESS_TOKEN_EXPIRE_MINUTES: $ACCESS_TOKEN_EXPIRE_MINUTES"
-          
-
-        # env:
-        #   DATABASE_URL: ${{secrets.DATABASE_URL}}
-        #   SECRET_KEY: ${{secrets.SECRET_KEY}}
-        #   ALGORITHM: ${{secrets.ALGORITHM}}
-        #   ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
-
-
-      - name: Verify DATABASE_URL
-        run: |
-          echo "DATABASE_URL is: $DATABASE_URL"
-          if [ -z "$DATABASE_URL" ]; then
-            echo "::error::❌ DATABASE_URL is NOT set"
-            exit 1
-          else
-            echo "✅ DATABASE_URL is set"
-          fi
-
-
-
       - name: Test with pytest
         run: |
           pip install pytest
