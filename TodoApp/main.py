@@ -55,7 +55,7 @@ def ci_cd_test():
 
 @app.get("/cicd_docker")
 def cicd_and_docker_integration():
-    return {"status": "Successful end-to-end integration"}
+    return {"status": "E2E success."}
 
 
 app.include_router(auth.router)
