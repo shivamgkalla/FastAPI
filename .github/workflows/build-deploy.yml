@@ -38,12 +38,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Write env variables to GITHUB_ENV
-        run: |
-          echo "DATABASE_URL=$DATABASE_URL" >> $GITHUB_ENV
-          echo "SECRET_KEY=$SECRET_KEY" >> $GITHUB_ENV
-          echo "ALGORITHM=$ALGORITHM" >> $GITHUB_ENV
-          echo "ACCESS_TOKEN_EXPIRE_MINUTES=$ACCESS_TOKEN_EXPIRE_MINUTES" >> $GITHUB_ENV
+      # - name: Write env variables to GITHUB_ENV
+      #   run: |
+      #     echo "DATABASE_URL=$DATABASE_URL" >> $GITHUB_ENV
+      #     echo "SECRET_KEY=$SECRET_KEY" >> $GITHUB_ENV
+      #     echo "ALGORITHM=$ALGORITHM" >> $GITHUB_ENV
+      #     echo "ACCESS_TOKEN_EXPIRE_MINUTES=$ACCESS_TOKEN_EXPIRE_MINUTES" >> $GITHUB_ENV
 
 
 
