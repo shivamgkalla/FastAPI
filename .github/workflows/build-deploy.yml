@@ -77,9 +77,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploying to Render
-        id: render_deploy
-        uses: johnbeynon/render-deploy-action@v0.0.8
+        uses: sws2apps/render-deployment@main
         with:
-            render-service-id: ${{ secrets.RENDER_SERVICE_ID }}
-            render-api-key: ${{ secrets.RENDER_API_KEY }}
-            wait-for-success: true
+            serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+            apiKey: ${{ secrets.RENDER_API_KEY }}
