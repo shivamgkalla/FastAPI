@@ -34,7 +34,7 @@ def test(request: Request):
 
 @app.get("/health")
 def health_check():
-    return {'status': 'Healthy.'}
+    return {'status': 'Healthy'}
 
 
 # Docker test #
