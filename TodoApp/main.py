@@ -8,7 +8,7 @@ from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI(title="TodosApp v1.0")
+app = FastAPI(title="TodoApp v1.0")
 
 Base.metadata.create_all(bind=engine)
 
